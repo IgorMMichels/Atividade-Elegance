@@ -1,0 +1,303 @@
+/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+
+/* Usar :root é uma ótima prática para declarar variáveis CSS. 
+  Se quiser mudar a cor principal do site, você só precisa mudar em um lugar!
+*/
+:root {
+    --cor-fundo: #0D1117; /* Um azul quase preto, muito moderno */
+    --cor-fundo-secundario: #161B22; /* Um tom mais claro para os cards */
+    --cor-principal: #58A6FF; /* Azul vibrante para botões e links */
+    --cor-texto-principal: #C9D1D9; /* Cinza claro para textos */
+    --cor-texto-secundario: #8B949E; /* Cinza mais escuro para subtextos */
+    --cor-borda: #30363D;
+    
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Lato', sans-serif;
+}
+
+/* Reset básico e configurações do corpo da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Animação de rolagem suave ao clicar nos links do menu */
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+.header {
+    background-color: rgba(13, 17, 23, 0.8); /* Fundo com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro "embaçado", muito elegante */
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1rem 0;
+    position: sticky; /* Deixa o menu fixo no topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px; /* Espaçamento entre os itens do menu */
+}
+
+.header nav a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Animação suave para o hover */
+}
+
+.header nav a:hover {
+    color: white;
+    background-color: var(--cor-fundo-secundario);
+}
+
+/* --- ESTILOS DE BOTÕES --- */
+/* Botão com fundo */
+.button-principal {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--fonte-titulo);
+    transition: all 0.3s ease;
+    border: 2px solid var(--cor-principal);
+}
+
+.button-principal:hover {
+    background-color: #7cc0ff;
+    transform: translateY(-3px); /* Efeito de "levantar" o botão */
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+}
+
+/* Botão secundário (inverte as cores) */
+.button-secundario {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--cor-principal);
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--fonte-titulo);
+    border: 2px solid var(--cor-principal);
+    transition: all 0.3s ease;
+}
+
+.button-secundario:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+}
+
+/* Botão do menu com contorno */
+.button-outline {
+    border: 1px solid var(--cor-texto-secundario);
+}
+
+.button-outline:hover {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    color: var(--cor-fundo) !important;
+}
+
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    min-height: 90vh; /* Ocupa quase a tela inteira */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(13, 17, 23, 0.5), rgba(13, 17, 23, 1)), url('https://picsum.photos/1200/800?grayscale') no-repeat center center/cover;
+    /* Usamos uma imagem de placeholder. Você pode trocar a URL por uma sua. */
+}
+
+.hero-content h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--cor-texto-principal);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- SEÇÃO SERVIÇOS (CARDS) --- */
+.servicos, .sobre, .contato {
+    padding: 80px 0;
+}
+
+.servicos h2, .sobre h2, .contato h2 {
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Faz os cards quebrarem a linha em telas menores */
+}
+
+.card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Animação de subir ao passar o mouse */
+    border-color: var(--cor-principal);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card p {
+    color: var(--cor-texto-secundario);
+}
+
+/* --- SEÇÃO SOBRE --- */
+.sobre {
+    background-color: var(--cor-fundo-secundario);
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-imagem {
+    flex: 1; /* Ocupa metade do espaço */
+    height: 400px;
+    background-color: #333;
+    border-radius: 12px;
+    background-image: url('https://picsum.photos/600/400?random=1'); /* Outra imagem de placeholder */
+    background-size: cover;
+    background-position: center;
+}
+
+.sobre-texto {
+    flex: 1; /* Ocupa a outra metade */
+}
+
+.sobre-texto h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    margin-bottom: 30px;
+    color: var(--cor-texto-secundario);
+}
+
+/* --- SEÇÃO CONTATO --- */
+.contato {
+    text-align: center;
+}
+
+.contato p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+}
+
+
+/* --- RODAPÉ --- */
+.footer {
+    background-color: var(--cor-fundo-secundario);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-secundario);
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+/* --- DESIGN RESPONSIVO (para celulares e tablets) --- */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column; /* Coloca o logo acima da navegação */
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .sobre-container {
+        flex-direction: column; /* Coloca a imagem acima do texto */
+    }
+
+    .sobre-imagem {
+        width: 100%;
+        height: 300px;
+    }
+}
