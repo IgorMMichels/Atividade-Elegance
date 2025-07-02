@@ -54,7 +54,7 @@ html {
 
 html {
     font-size: calc(15px + 0.390625vw);
-
+    color: #E0E1DD;
 }
 
 /************************************************
@@ -159,7 +159,7 @@ Início
     border-radius: 8px;
     font-size: 0.9rem;
     text-decoration: none;
-     font-weight: bold;
+    font-weight: bold;
     color: #0d1b2a;
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -179,4 +179,35 @@ servicos
     font-size: 2rem;
     text-align: center;
     color: #E0E1DD;
+}
+
+.servicos ul li {
+    padding: 20px;
+    margin: 20px 20px 20px 20px;
+    border-radius: 12px;
+    align-items: center;
+    background-color: #1B263B;
+    border: 2px solid;
+    border-color: #00000065;
+    transition: all 1 ease;
+    text-decoration: none;
+    list-style: none;
+}
+
+.servicos p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 20px 80px 20px 80px;
+    color: #E0E1DD;
+}
+
+.servicos ul li:hover {
+    border-color: #778DA9;
+    transform: translateY(-5px);
+}
+
+
+.servicos h3 {
+    font-size: 1.5rem;
+    text-align: center;
 }
