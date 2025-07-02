@@ -181,23 +181,31 @@ servicos
     color: #E0E1DD;
 }
 
+.servicos ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Faz os cards quebrarem a linha em telas menores */
+}
+
 .servicos ul li {
     padding: 20px;
     margin: 20px 20px 20px 20px;
     border-radius: 12px;
     align-items: center;
     background-color: #1B263B;
-    border: 2px solid;
     border-color: #00000065;
-    transition: all 1 ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
     text-decoration: none;
     list-style: none;
+    max-width: 350px;
 }
 
 .servicos p {
     font-size: 0.8rem;
     text-align: center;
-    margin: 20px 80px 20px 80px;
+    margin: 40px 0px 20px 0px;
     color: #E0E1DD;
 }
 
